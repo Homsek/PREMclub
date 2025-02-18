@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Unbounded:300,regular,500,600);
+
+@font-face {
+   font-family: "Kiyosuna";
+   src: url(../fonts/KiyosunaSansLight.otf);
+}
+
+@font-face {
+   font-family: accent;
+   src: url(../fonts/audiowave.ttf);
+}
+
+$container: 1440px;
+$main: #1b1ffd;
+$opacityMain: #1b1ffd25;
+$back: #15161f;
+$accent: #1d1e44;
+
+body {
+   font-family: kiyosuna;
+   background-color: $back;
+   overflow-x: hidden;
+}
+
+body._lock {
+   overflow: hidden;
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+main {
+   flex: 1 0 auto;
+}
+
+._container {
+   max-width: $container;
+   margin: 0 auto;
+   padding: 120px 20px 0 20px;
+}
+
+._title-block {
+   position: relative;
+   letter-spacing: 2px;
+   font-family: accent;
+   font-size: clamp(23px, 3.5vw, 26px);
+   font-weight: 400;
+   text-transform: uppercase;
+   color: white;
+   line-height: 140%;
+   padding: 20px 10px 20px 0;
+   background-color: $main;
+   margin-bottom: 45px;
+}
+
+._title-block::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: -50vw;
+   width: 50vw;
+   height: 100%;
+   background-color: $main;
+}
+
+.contacts-page {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+/*окрашивание карты*/
+.ymaps-2-1-79-ground-pane {
+   filter: grayscale(100%) invert(95%);
+}
+
+.page-breadcrumbs {
+   color: white;
+   font-size: 18px;
+   max-width: $container;
+   padding: 20px;
+   width: 100%;
+   margin: 0 auto;
+   margin-top: 150px;
+
+   a {
+      color: white;
+      opacity: 0.8;
+   }
+
+   a:hover {
+      text-decoration: underline;
+   }
+
+   span {
+      font-weight: bold;
+   }
+}
+
+@media (min-width: 769px) {
+   ._tablet {
+      display: none;
+   }
+}
+
+@media (max-width: 768px) {
+   ._tablet {
+      display: block;
+   }
+
+   ._container {
+      padding: 70px 20px 0 20px;
+   }
+}
+
+@media (max-width: 480px) {
+   .page-breadcrumbs {
+      margin-top: 100px;
+   }
+}
+
+@import "_null", "_header", "_main-page", "_footer", "_buttons", "_franchise-page", "_products-page", "_news-page";

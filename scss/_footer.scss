@@ -1,0 +1,125 @@
+.footer {
+   margin-top: 120px;
+   background-color: $accent;
+   color: white;
+
+   &__container {
+      max-width: $container;
+      margin: 0 auto;
+      padding: 50px 20px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__copyright,
+   &__author {
+      font-size: clamp(18px, 3vw, 20px);
+      line-height: 130%;
+   }
+
+   &__author a {
+      font-weight: bold;
+      color: white;
+   }
+
+   &__author a:hover {
+      text-decoration: underline;
+   }
+
+   &__socials {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+   }
+
+   &__social {
+      position: relative;
+      height: 75px;
+      width: 75px;
+      transition: all 0.2s;
+
+      svg {
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+      }
+
+      path {
+         transition: all 0.2s;
+      }
+   }
+
+   &__social:hover {
+      background-color: white;
+   }
+
+   &__social:hover path {
+      fill: $accent;
+   }
+
+   &__buttons {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+   }
+
+   &__button-container:hover span {
+      color: $accent;
+   }
+
+   &__button-up {
+      border: 2px solid white;
+      position: relative;
+      height: 75px;
+      width: 75px;
+      overflow: hidden;
+
+      svg {
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+      }
+
+      path {
+         transition: all 0.3s;
+      }
+   }
+
+   &__button-up::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      transition: all 0.3s;
+   }
+
+   &__button-up:hover::before {
+      left: -100%;
+   }
+
+   &__button-up:hover path {
+      fill: white;
+   }
+
+   @media (max-width: 768px) {
+      & {
+         margin-top: 70px;
+      }
+   }
+
+   @media (max-width: 425px) {
+      &__buttons {
+         flex-wrap: wrap;
+         gap: 20px;
+         justify-content: flex-end;
+      }
+   }
+}
